@@ -2,7 +2,7 @@
 
 import Question from "@/components/Question";
 import { rsoFont } from "@/utils/fonts";
-import placeholder from "@/public/placeholder-sq.webp";
+
 import {
   AdjustmentsHorizontalIcon,
   QuestionMarkCircleIcon,
@@ -11,13 +11,15 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { CharacterSelect } from "@/components/CharacterSelect";
 
 export default function QuestionsHomePage() {
   const searchParams = useSearchParams();
   const activeTab = searchParams.get("tab");
+
   return (
-    <div className="grid grid-cols-5 gap-8">
-      <div className="col-span-4">
+    <div className="grid grid-cols-4 gap-8">
+      <div className="col-span-3">
         <div className="font-bold breadcrumbs mb-4">
           <ul>
             <li>
@@ -40,13 +42,15 @@ export default function QuestionsHomePage() {
                 quests and events
               </p>
             </div>
-            <Link href="/questions/ask" className="btn btn-primary">
-              Ask Question
-            </Link>
+            <div className="flex items-center">
+              <Link href="/questions/ask" className="btn btn-primary">
+                Ask Question
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-4">
           <div className="flex gap-2">
             <div className="join">
               <Link
@@ -87,37 +91,50 @@ export default function QuestionsHomePage() {
             </button>
           </div>
         </div>
+        <p className="mt-8 text-sm text-white/50">Showing 24 questions</p>
 
-        <div className="mt-8">
-          <Question />
+        <div className="mt-4">
+          <Question answered />
           <Question />
           <Question />
         </div>
+
+        <div className="flex justify-center">
+          <div className="join">
+            <button className="join-item btn">1</button>
+            <button className="join-item btn btn-active">2</button>
+            <button className="join-item btn">3</button>
+            <button className="join-item btn">4</button>
+          </div>
+        </div>
       </div>
       <div className="col-span-1">
-        <h3 className="font-bold text-white/80 uppercase text-md mb-2">
-          Patch 2.0
-          <span className="badge badge-sm bg-slate-600 border-0 text-white/80 ml-2">
-            Current
-          </span>
-        </h3>
-        <ul>
-          <li>
-            <Link href="/asdsad" className="flex gap-2 items-center p-2">
-              <div className="w-10 h-10 mask mask-hexagon">
-                <Image src={placeholder} alt="cats" />
-              </div>
-              <span className="font-bold mr-auto">Jingliu</span>
-              <span className="text-amber-500 flex gap-[-8px] items-center">
-                <StarIcon className="w-4 h-4" />
-                <StarIcon className="w-4 h-4" />
-                <StarIcon className="w-4 h-4" />
-                <StarIcon className="w-4 h-4" />
-                <StarIcon className="w-4 h-4" />
-              </span>
-            </Link>
-          </li>
-        </ul>
+        <aside className="mb-8">
+          <h3 className="font-bold text-white/80 uppercase text-md mb-2">
+            Patch 2.0
+            <span className="badge badge-sm bg-slate-600 border-0 text-white/80 ml-2">
+              Current
+            </span>
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
+            <CharacterSelect rarity={5} />
+            <CharacterSelect rarity={4} />
+            <CharacterSelect rarity={4} />
+            <CharacterSelect rarity={4} />
+          </div>
+        </aside>
+
+        <aside className="">
+          <h3 className="font-bold text-white/80 uppercase text-md mb-2">
+            Patch 2.0
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
+            <CharacterSelect rarity={5} />
+            <CharacterSelect rarity={5} />
+            <CharacterSelect rarity={5} />
+            <CharacterSelect rarity={5} />
+          </div>
+        </aside>
       </div>
     </div>
   );

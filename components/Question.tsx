@@ -1,6 +1,7 @@
 import {
   ArrowTrendingUpIcon,
   BellAlertIcon,
+  ChatBubbleLeftIcon,
   ChatBubbleLeftRightIcon,
   CheckBadgeIcon,
   ChevronDoubleUpIcon,
@@ -16,7 +17,11 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Question() {
+type Props = {
+  answered?: boolean;
+};
+
+export default function Question({ answered }: Props) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="flex mb-6 pb-6 border-b border-b-base-content/20">
@@ -85,11 +90,56 @@ export default function Question() {
             f, the cat will die. You then know that floor f-1 was the maximal
             safe floor.
           </p>
+          {answered && (
+            <div className="alert mb-4 border-2 border-green-500 items-start">
+              <CheckBadgeIcon className="h-12 w-12 text-green-500" />
+              <div className="flex-col">
+                <div className="prose">
+                  <h4 className="text-green-500 uppercase text-sm">Answer</h4>
+                  <p className="">
+                    Imagine you're in a tall building with a cat. The cat can
+                    survive a fall out of a low story window, but will die if
+                    thrown from a high floor. How can you figure out the longest
+                    drop that the cat can survive, using the least number of
+                    attempts?
+                  </p>
+                  <p className="">
+                    Imagine you're in a tall building with a cat. The cat can
+                    survive a fall out of a low story window, but will die if
+                    thrown from a high floor. How can you figure out the longest
+                    drop that the cat can survive, using the least number of
+                    attempts?
+                  </p>
+                </div>
+                <div className="flex gap-1 mt-4 font-bold items-center text-white/40">
+                  <UserIcon className="w-5 h-5" />
+                  <Link
+                    href="/users/asdas"
+                    className="text-sm font-bold mr-2 no-underline text-amber-500 hover:text-white/90"
+                  >
+                    quills{" "}
+                    <span className="font-normal text-white/40">(2002)</span>
+                  </Link>
+                  <ClockIcon className="w-5 h-5" />
+                  <span className="text-sm font-normal mr-2">69 hours ago</span>
+                  <ChatBubbleLeftIcon className="w-5 h-5" />
+                  <Link
+                    href="/asds"
+                    className="text-sm font-normal mr-2 no-underline"
+                  >
+                    4 replies
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="flex gap-2 mb-2">
-            <Link href="/asdasd" className="btn btn-info btn-sm gap-1">
-              <CheckBadgeIcon className=" w-4 h-4" />
-              Answer Question
-            </Link>
+            {!answered && (
+              <Link href="/asdasd" className="btn btn-info btn-sm gap-1">
+                <CheckBadgeIcon className=" w-4 h-4" />
+                Answer Question
+              </Link>
+            )}
             <button className="btn btn-outline btn-info btn-sm">🐈 32</button>
           </div>
         </div>
