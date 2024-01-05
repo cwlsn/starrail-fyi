@@ -23,7 +23,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex ml-auto">
-          <ul className="menu text-md bg-base-200 lg:menu-horizontal rounded-box">
+          <ul className="menu text-md bg-base-200 lg:menu-horizontal rounded-box flex gap-1">
             <li>
               <Link href="/characters">
                 <UserGroupIcon className="h-6 w-6 text-teal-500" />
@@ -31,7 +31,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/questions">
+              <Link href="/questions" className="active">
                 <QuestionMarkCircleIcon className="h-6 w-6 text-amber-500" />
                 Q&A
               </Link>

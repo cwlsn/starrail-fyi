@@ -18,8 +18,8 @@ export default function QuestionsHomePage() {
   const activeTab = searchParams.get("tab");
 
   return (
-    <div className="grid grid-cols-4 gap-8">
-      <div className="col-span-3">
+    <div className="grid grid-cols-3 gap-8">
+      <div className="col-span-2">
         <div className="font-bold breadcrumbs mb-4">
           <ul>
             <li>
@@ -108,9 +108,13 @@ export default function QuestionsHomePage() {
           </div>
         </div>
       </div>
+
       <div className="col-span-1">
-        <aside className="mb-8">
-          <h3 className="font-bold text-white/80 uppercase text-md mb-2">
+        <h2 className={`${rsoFont.className} text-white text-2xl mb-2`}>
+          Quick Searches
+        </h2>
+        <aside className="mb-4">
+          <h3 className="font-bold text-white/60 uppercase text-sm mb-2">
             Patch 2.0
             <span className="badge badge-sm bg-slate-600 border-0 text-white/80 ml-2">
               Current
@@ -124,15 +128,83 @@ export default function QuestionsHomePage() {
           </div>
         </aside>
 
-        <aside className="">
-          <h3 className="font-bold text-white/80 uppercase text-md mb-2">
+        <aside className="mb-4">
+          <h3 className="font-bold text-white/60 uppercase text-sm mb-2">
             Patch 2.0
           </h3>
           <div className="grid grid-cols-2 gap-2">
             <CharacterSelect rarity={5} />
-            <CharacterSelect rarity={5} />
-            <CharacterSelect rarity={5} />
-            <CharacterSelect rarity={5} />
+            <CharacterSelect rarity={4} />
+            <CharacterSelect rarity={4} />
+            <CharacterSelect rarity={4} />
+          </div>
+        </aside>
+
+        <aside className="mb-4">
+          <h3 className="font-bold text-white/60 uppercase text-sm mb-2">
+            Topics
+          </h3>
+          <div className="flex flex-wrap gap-1 mb-1">
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-info/20 text-white/80 font-black hover:bg-info/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-red-500/20 text-white/80 font-black hover:bg-red-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-violet-500/20 text-white/80 font-black hover:bg-violet-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-yellow-500/20 text-white/80 font-black hover:bg-yellow-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-emerald-500/20 text-white/80 font-black hover:bg-emerald-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-slate-500/20 text-white/80 font-black hover:bg-slate-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-info/20 text-white/80 font-black hover:bg-info/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-red-500/20 text-white/80 font-black hover:bg-red-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-violet-500/20 text-white/80 font-black hover:bg-violet-500/40"
+            >
+              Topic
+            </Link>
+            <Link
+              href="/tags/asd"
+              className="btn btn-xs uppercase border-none bg-yellow-500/20 text-white/80 font-black hover:bg-yellow-500/40"
+            >
+              Topic
+            </Link>
           </div>
         </aside>
       </div>

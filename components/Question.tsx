@@ -42,7 +42,7 @@ export default function Question({ answered }: Props) {
         </div>
       </div>
       <div className="ml-4">
-        <div className="flex gap-1 mb-1">
+        <div className="flex gap-1 mb-2">
           <Link
             href="/tags/asd"
             className="btn btn-xs uppercase border-none bg-info/20 text-white/80 font-black hover:bg-info/40"
@@ -56,12 +56,13 @@ export default function Question({ answered }: Props) {
             Topic
           </Link>
         </div>
-        <h3 className="text-2xl font-bold text-white/90">
+        <h3 className="text-2xl font-bold text-white/90 leading-tight">
           <Link href="/questions/asdasd" className="hover:underline">
-            How do you finish the boxing event in so few cycles??
+            How do you finish the boxing event in so few cycles?? How do you
+            finish the boxing event in so few cycles??
           </Link>
         </h3>
-        <div className="flex gap-1 mt-1 font-bold items-center text-white/40">
+        <div className="flex gap-1 mt-2 font-bold items-center text-white/40">
           <UserIcon className="w-5 h-5" />
           <Link
             href="/users/asdas"
@@ -73,7 +74,7 @@ export default function Question({ answered }: Props) {
           <span className="text-sm font-normal mr-2">69 hours ago</span>
         </div>
         <div
-          className={`prose mt-3 ${
+          className={`prose mt-2 ${
             !expanded && "line-clamp-3"
           } text-base-content`}
         >
